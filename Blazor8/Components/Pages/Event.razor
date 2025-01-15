@@ -1,0 +1,30 @@
+﻿@page "/event"
+@rendermode InteractiveServer
+
+<h1>Event</h1>
+
+<div>
+	<button class="btn btn-secondary" onclick="javascript:alert('Clicou!')">Clique-me (JS)</button>
+	<button class="btn btn-secondary" @onclick="ClickButton">Clique-me (C#)</button>
+	<button class="btn btn-success" @onclick="@((e) => { hello = "Hello inline";})">Clique-me (C# inline)</button>
+</div>
+<p>@cord</p>
+<p>@hello</p>
+
+
+@code {
+	private string cord { get; set; } = string.Empty;
+	private string hello { get; set; } = "Hello, World!";
+	public void ClickButton(MouseEventArgs e)
+	{
+		cord = $"Posição do clique: x = {e.ScreenX} y = {e.ScreenY}";
+		if(hello == "Hello, World!")
+		{
+			hello = "Olá, Mundo!";
+		}
+		else
+		{
+			hello = "Hello, World!";
+		}
+	}
+}
