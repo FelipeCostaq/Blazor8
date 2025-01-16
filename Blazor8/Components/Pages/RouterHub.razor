@@ -1,0 +1,51 @@
+﻿@page "/router"
+@page "/routing/{*all}"
+@page "/router/{group}/{id?}"
+@rendermode InteractiveServer
+
+@attribute [Route(RoutersConstant.RouterHub)]
+
+@inject NavigationManager Navigation
+
+<h3>RouterHub</h3>
+
+<div>
+	Todos : @all (QueryString : @nome)
+	<br />
+	Grupo : @group
+	<br />
+	Id : @id
+	<br />
+	<input class="form-control" @bind="router" @bind:event="oninput"  />
+	<br />
+	<button class="btn btn-primary" @onclick="OnClick">Navegar</button>
+	@warning
+</div>
+
+@code {
+	public string? router { get; set; }
+
+	[Parameter]
+	public string? all { get; set; }
+
+	[ Parameter ]
+	public string? group { get; set; }
+
+	[Parameter]
+	public string? id { get; set; }
+
+	[SupplyParameterFromQuery]
+	public string? nome { get; set; }
+
+	public string warning { get; set; } = "";
+
+	public void OnClick()
+	{
+		if (!string.IsNullOrEmpty(router)){
+			Navigation.NavigateTo(router);
+		}
+		else{
+			warning = "Não deixe o espaço vazio";
+		}
+	}
+}
