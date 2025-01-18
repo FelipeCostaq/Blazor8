@@ -1,13 +1,22 @@
 ﻿@page "/component"
-
+@rendermode InteractiveServer
+@inject IJSRuntime JS
 <h3>Component</h3>
 <div class="d-flex p-2 gap-5">
-	<BootstrapCard title="Notícia 1" paragraph="Opsion adolor lorem ipsum lorem" />
-	<BootstrapCard title="Notícia 2" paragraph="Lorem ipsum lorem adolor opsion" />
+	<BootstrapCard EventClick="eventClickCard1" title="Notícia 1" paragraph="Opsion adolor lorem ipsum lorem" />
+	<BootstrapCard EventClick="eventClickCard2" title="Notícia 2" paragraph="Lorem ipsum lorem adolor opsion" />
 </div>
 
 
 
 @code {
+	public void eventClickCard1()
+	{
+		JS.InvokeVoidAsync("alert", "Card1");
+	}
 
+	public void eventClickCard2()
+	{
+		JS.InvokeVoidAsync("alert", "Card2");
+	}
 }
