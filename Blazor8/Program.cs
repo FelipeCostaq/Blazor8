@@ -8,8 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+/*
+ 
+ Transient - A cada injenção é um objeto difente
+ Scoped - A injeção gera o mesmo objeto no escopo
+ Singleton - Gera apenas um objeto para aplicação e guarda esse valor. O objeto so muda se a aplicação reiniciar
 
-builder.Services.AddTransient<RandomNumber>();
+ */
+builder.Services.AddSingleton<RandomNumber>();
 
 var app = builder.Build();
 
