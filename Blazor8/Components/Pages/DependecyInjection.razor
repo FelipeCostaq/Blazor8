@@ -1,0 +1,16 @@
+﻿@page "/dependencyInjection"
+@inject RandomNumber RandomNumber1
+@inject RandomNumber RandomNumber2
+ 
+<h1>Dependency Injection</h1>
+<div class="row">
+	<div class="col-6">
+		Valor 1: @RandomNumber1.numberIdentify
+	</div>
+	<div class="col-6">
+		Valor 2: @RandomNumber2.numberIdentify
+	</div>
+</div>
+@code {
+
+}
