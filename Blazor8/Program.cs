@@ -1,6 +1,7 @@
 using Blazor8.Client.Pages;
 using Blazor8.Components;
 using Blazor8.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,9 @@ builder.Services.AddRazorComponents()
 
  */
 builder.Services.AddSingleton<RandomNumber>();
-builder.Services.AddSingleton<IMensagem, MensagemEmail>();
+builder.Services.AddSingleton<IMensagem, MensagemWpp>();
+builder.Services.AddKeyedSingleton<IMensagem, MensagemWpp>("whatsapp");
+builder.Services.AddKeyedSingleton<IMensagem, MensagemSMS>("sms");
 
 var app = builder.Build();
 
