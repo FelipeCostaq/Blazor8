@@ -1,6 +1,17 @@
 ﻿@page "/separation"
+@rendermode InteractiveServer
 <link rel="stylesheet" href="Separation.css"/>
 <h3>Separation</h3>
 
 <p>@DateTime.Now, @texto</p>
-
+<div>
+	<button @onclick="CarregarJS" class="btn btn-primary">
+		Carregar JS
+	</button>
+	<button class="btn btn-primary" onclick="javascript:alert('Olá, Mundo!')">
+		Botão JS (Inline)
+	</button>
+	<button class="btn btn-primary" onclick="ShowMenssage()">
+		Botão JS (Function)
+	</button>
+</div>
