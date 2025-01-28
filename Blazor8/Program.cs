@@ -16,6 +16,7 @@ builder.Services.AddRazorComponents()
 
  */
 builder.Services.AddSingleton<RandomNumber>();
+builder.Services.AddSingleton<IMensagem, MensagemEmail>();
 
 var app = builder.Build();
 

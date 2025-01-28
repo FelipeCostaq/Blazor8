@@ -1,6 +1,7 @@
 ﻿@page "/dependencyInjection"
 @inject RandomNumber RandomNumber1
 @inject RandomNumber RandomNumber2
+@inject IMensagem MensagemEmail
  
 <h1>Dependency Injection</h1>
 <div class="row">
@@ -9,6 +10,17 @@
 	</div>
 	<div class="col-6">
 		Valor 2: @RandomNumber2.numberIdentify
+	</div>
+</div>
+<div class="row">
+	<div class="col-4">
+		Mensagem Email enviada?: @MensagemEmail.Enviar("Olá, Mundo!")
+	</div>
+	<div class="col-4">
+
+	</div>
+	<div class="col-4">
+
 	</div>
 </div>
 @code {
