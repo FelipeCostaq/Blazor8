@@ -8,27 +8,37 @@
 		@mensagem
 	</div>
 }
-
-<div class="row">
-	<div class="col-12">
-		<label for="email">E-mail</label>
-		<input id="email" class="form-control" @bind="email" />
+<EditForm Model="Usuario" FormName="login" OnSubmit="Acessar">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+	<div class="row">
+		<div class="col-12">
+			<label for="email">E-mail</label>
+			<input id="email" class="form-control" @bind="Usuario.Email" />
+		</div>
+		<div class="col-12">
+			<label for="senha">Senha</label>
+			<input id="senha" class="form-control" @bind="Usuario.Senha" />
+		</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-outline-primary mt-3">Acessar</button>
+		</div>
 	</div>
-	<div class="col-12">
-		<label for="senha">Senha</label>
-		<input id="senha" class="form-control" @bind="senha" />
-	</div>
-	<div class="col-12">
-		<button @onclick="Acessar" class="btn btn-outline-primary mt-3">Acessar</button>
-	</div>
-</div>
+</EditForm>
 @code {
 	private string? mensagem { get; set; }
-	private string? senha { get; set; }
-	private string? email { get; set; }
+	private Usuario Usuario { get; set; } = new Usuario();
 
-	public void Acessar()
+	public void Acessar(EditContext context)
 	{
-		mensagem = $"Email: {email}\nSenha: {senha}";
+		if(context.Validate())
+		{
+			mensagem = $"Email: {Usuario.Email}\nSenha: {Usuario.Senha}";
+		}
+		else
+		{
+			mensagem = "Aguardando dados válidos...";
+		}
+		
 	}
 }
