@@ -8,7 +8,7 @@
 		@mensagem
 	</div>
 }
-<EditForm Model="Usuario" FormName="login" OnSubmit="Acessar">
+<EditForm Model="Usuario" FormName="login" OnInvalidSubmit="ValidacaoError" OnValidSubmit="EnviarDadosComValidacaoSucesso">
 	<DataAnnotationsValidator />
 	<ValidationSummary />
 	<div class="row">
@@ -41,6 +41,16 @@
 		{
 			mensagem = "Aguardando dados válidos...";
 		}
-		
+
+	}
+
+	public void ValidacaoError()
+	{
+		mensagem = "Validação ERROR";
+	}
+
+	public void EnviarDadosComValidacaoSucesso()
+	{
+		mensagem = "Validação OK!";
 	}
 }
