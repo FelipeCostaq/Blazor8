@@ -14,11 +14,13 @@
 	<div class="row">
 		<div class="col-12">
 			<label for="email">E-mail</label>
-			<input id="email" class="form-control" @bind="Usuario.Email" />
+			<InputText id="email" class="form-control" @bind-Value="Usuario.Email" />
+			<ValidationMessage For="()=>Usuario.Email"/>
 		</div>
 		<div class="col-12">
 			<label for="senha">Senha</label>
-			<input id="senha" class="form-control" @bind="Usuario.Senha" />
+			<InputText type="password" id="senha" class="form-control" @bind-Value="Usuario.Senha" />
+			<ValidationMessage For="()=>Usuario.Senha" />
 		</div>
 		<div class="col-12">
 			<button type="submit" class="btn btn-outline-primary mt-3">Acessar</button>
