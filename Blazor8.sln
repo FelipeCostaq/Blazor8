@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor8", "Blazor8\Blazor8.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor8.Client", "Blazor8.Client\Blazor8.Client.csproj", "{1FDBF4B7-48E7-4029-A708-4A2AF09655BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModeloUnificadoIdentify", "ModeloUnificadoIdentify", "{4B08E166-D697-4916-8301-FFF12569BC80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModeloUnificado", "ModeloUnificado", "{3F9CDD61-B50D-4642-A027-92BA9F17BDE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorIdentify", "BlazorIdentify\BlazorIdentify\BlazorIdentify.csproj", "{6C5F1649-CBB6-4282-97C7-8C7E287707FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorIdentify.Client", "BlazorIdentify\BlazorIdentify.Client\BlazorIdentify.Client.csproj", "{230A6963-D9EF-4C0F-82A9-F4D3D4506200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +29,22 @@ Global
 		{1FDBF4B7-48E7-4029-A708-4A2AF09655BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FDBF4B7-48E7-4029-A708-4A2AF09655BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FDBF4B7-48E7-4029-A708-4A2AF09655BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5F1649-CBB6-4282-97C7-8C7E287707FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5F1649-CBB6-4282-97C7-8C7E287707FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5F1649-CBB6-4282-97C7-8C7E287707FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5F1649-CBB6-4282-97C7-8C7E287707FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230A6963-D9EF-4C0F-82A9-F4D3D4506200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230A6963-D9EF-4C0F-82A9-F4D3D4506200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230A6963-D9EF-4C0F-82A9-F4D3D4506200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230A6963-D9EF-4C0F-82A9-F4D3D4506200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{819348C2-71B2-466E-A5AB-BF808B1E4F1E} = {3F9CDD61-B50D-4642-A027-92BA9F17BDE3}
+		{1FDBF4B7-48E7-4029-A708-4A2AF09655BF} = {3F9CDD61-B50D-4642-A027-92BA9F17BDE3}
+		{6C5F1649-CBB6-4282-97C7-8C7E287707FC} = {4B08E166-D697-4916-8301-FFF12569BC80}
+		{230A6963-D9EF-4C0F-82A9-F4D3D4506200} = {4B08E166-D697-4916-8301-FFF12569BC80}
 	EndGlobalSection
 EndGlobal
